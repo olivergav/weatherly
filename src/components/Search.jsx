@@ -12,7 +12,7 @@ function Search({searchValue, setSearchValue}) {
     }
 
     function handleBlur() {
-        if (searchRef.current.value === "") {
+        if (searchValue === "") {
             searchRef.current.classList.remove('focus')
         }
     }
