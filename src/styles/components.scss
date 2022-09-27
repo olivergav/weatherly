@@ -1,11 +1,31 @@
+@import './utils';
+
 .search {
+  position: relative;
+  color: white;
 
   &__lbl {
+    color: rgb(255, 255, 255, 0.7);
+    position: absolute;
+    top: calc(18px);
+    left: calc(20px);
+    background-color: rgb(0, 30, 60);
+    transition: all 400ms;
+    padding: rem(2px) rem(6px);
+  }
 
+  &:hover, &.focus {
+    .search__lbl {
+      font-size: rem(8px);
+      top: rem(8px);
+    }
   }
 
   &__input {
-
+    padding: rem(9px);
+    border-radius: rem(4px);
+    border: rem(1px) solid rgba(255, 255, 255, 0.23);
+    background-color: rgb(0, 30, 60);
+    margin: rem(10px);
   }
-
 }
