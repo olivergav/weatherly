@@ -12,7 +12,7 @@ function App() {
     const [forecastData, setForecastData] = useState({});
 
     async function handleSearch() {
-        const data = await getWeatherFromApi(searchValue);
+        const data = await getWeatherFromApi(searchValue, 7);
         setForecastData(data);
         setSearchValue('');
     }

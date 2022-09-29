@@ -1,6 +1,6 @@
 function Weather({currentWeather: {temp_c, feelslike_c, condition, humidity, wind_dir, name, country}}){
     return (
-        <div style={{color: "white"}}>
+        <div className='chart'>
             <h2>{name}, {country}</h2>
             <p>Temperature: {temp_c} °C</p>
             <p>Feels like: {feelslike_c} °C</p>
