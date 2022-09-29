@@ -1,14 +1,19 @@
+import {useState} from "react";
+
 import Weather from "./components/Weather";
 import SearchBar from "./components/SearchBar";
 import WeatherForecastChart from "./components/WeatherForecastChart";
+import {getWeatherFromApi} from "./utils/api";
 
 import "./styles/main.scss";
-import {useState} from "react";
 
 function App() {
     const [searchValue, setSearchValue] = useState('');
+    const [forecastData, setForecastData] = useState({});
 
-    function handleSearch() {
+    async function handleSearch() {
+        const data = await getWeatherFromApi(searchValue);
+        setForecastData(data);
         setSearchValue('');
     }
 
