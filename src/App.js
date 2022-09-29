@@ -20,7 +20,9 @@ function App() {
     return (
         <main className="App">
             <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}/>
-            <Weather/>
+            {!!Object.keys(forecastData).length && (
+                <Weather currentWeather={{...forecastData.current, ...forecastData.location}}/>
+            )}
             <WeatherForecastChart/>
         </main>
     );

@@ -16,5 +16,6 @@ export async function getWeatherFromApi(city, days = 10, aqi = 'no', alerts = 'n
     if (response.status !== 200) {
         throw new Error('Something went wrong with API Call')
     }
-    return response.json();
+
+    return await response.json();
 }
