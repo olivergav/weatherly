@@ -34,7 +34,7 @@ function Search({searchValue, setSearchValue, handleSearch}) {
 
             <button className="search__btn"
                     onClick={handleSearch}>
-                Clear
+                Search
             </button>
         </div>
     )
