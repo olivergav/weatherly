@@ -64,11 +64,11 @@ function WeatherForecastChart({forecast}) {
                             type: 'line',
                             smooth: true,
                             lineStyle: {
-                                color: '#1869b7',
+                                color: '#fead02',
                                 width: 2,
                             },
                             itemStyle: {
-                                color: '#1869b7',
+                                color: '#fead02',
                             },
                         },
                         {
