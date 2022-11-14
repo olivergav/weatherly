@@ -11,11 +11,12 @@ export async function getWeatherFromApi(city, days = 10, aqi = 'no', alerts = 'n
     }
 
     const response = await fetch(`${BASE_URL}?${new URLSearchParams(config)}`);
-    console.log(response);
 
-    if (response.status !== 200) {
-        throw new Error('Something went wrong with API Call')
-    }
+    // if (response.status !== 200) {
+    //     throw new Error('Something went wrong with API Call');
+    // }
+    //
+    // return await response.json();
 
-    return await response.json();
+    return response;
 }

@@ -11,9 +11,21 @@ import "./styles/main.scss";
 function App() {
     const [searchValue, setSearchValue] = useState('');
     const [forecastData, setForecastData] = useState({});
+    const [displayData, setDisplayData] = useState(false);
+    const [statusMessage, setStatusMessage] = useState(0);
+
+    const statusMessages = ['Loading...', 'Something went wrong. Try again!']
 
     async function handleSearch() {
-        const data = await getWeatherFromApi(searchValue, 7);
+        setDisplayData(true);
+
+        const response = await getWeatherFromApi(searchValue, 7);
+        if (response.status !== 200) {
+            setStatusMessage(1);
+            throw new Error('Something went wrong with API Call!')
+        }
+        const data = await response.json()
+
         setForecastData(data);
         setSearchValue('');
     }
@@ -21,12 +33,17 @@ function App() {
     return (
         <main className="App">
             <Header/>
-            <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}/>
-            {!!Object.keys(forecastData).length && (
-                <>
-                    <Weather currentWeather={{...forecastData.current, ...forecastData.location}}/>
-                    <WeatherForecastChart forecast={forecastData.forecast.forecastday}/>
-                </>
+            <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch} setStatusMessage={setStatusMessage}/>
+
+            {displayData && (
+                !!Object.keys(forecastData).length ? (
+                    <>
+                        <Weather currentWeather={{...forecastData.current, ...forecastData.location}}/>
+                        <WeatherForecastChart forecast={forecastData.forecast.forecastday}/>
+                    </>
+                ) : (
+                    <h2>{statusMessages[statusMessage]}</h2>
+                )
             )}
         </main>
     );
