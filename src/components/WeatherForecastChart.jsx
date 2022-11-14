@@ -9,7 +9,7 @@ function WeatherForecastChart({forecast}) {
     }
 
     return (
-        <>
+        <div className="chart__wrapper">
             <ReactECharts
                 option={{
                     legend: {
@@ -84,7 +84,7 @@ function WeatherForecastChart({forecast}) {
                     ]
                 }}
             />
-        </>
+        </div>
     )
 }
 
