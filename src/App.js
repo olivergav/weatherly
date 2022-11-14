@@ -42,7 +42,7 @@ function App() {
                         <WeatherForecastChart forecast={forecastData.forecast.forecastday}/>
                     </>
                 ) : (
-                    <h2>{statusMessages[statusMessage]}</h2>
+                    <h2 className='header'>{statusMessages[statusMessage]}</h2>
                 )
             )}
         </main>
