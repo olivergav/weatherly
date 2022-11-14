@@ -1,7 +1,8 @@
 import {useState} from "react";
 
-import Weather from "./components/Weather";
 import SearchBar from "./components/SearchBar";
+import Header from "./components/Header";
+import Weather from "./components/Weather";
 import WeatherForecastChart from "./components/WeatherForecastChart";
 import {getWeatherFromApi} from "./utils/api";
 
@@ -19,6 +20,7 @@ function App() {
 
     return (
         <main className="App">
+            <Header/>
             <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}/>
             {!!Object.keys(forecastData).length && (
                 <>
