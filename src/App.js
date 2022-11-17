@@ -1,13 +1,17 @@
 import {useState} from "react";
 
+import apiKeyContext from "./components/apiKeyContext";
+
 import SearchBar from "./components/SearchBar";
 import Header from "./components/Header";
 import Weather from "./components/Weather";
 import WeatherForecastChart from "./components/WeatherForecastChart";
 import {getWeatherFromApi} from "./utils/api";
+import GoogleWeatherForecastChart from "./components/GoogleWeatherForecastChart";
+
 
 import "./styles/main.scss";
-import GoogleWeatherForecastChart from "./components/GoogleWeatherForecastChart";
+import GoogleMap from "./components/GoogleMap";
 
 function App() {
     const [searchValue, setSearchValue] = useState('');
@@ -16,6 +20,8 @@ function App() {
     const [statusMessage, setStatusMessage] = useState(0);
 
     const statusMessages = ['Loading...', 'Something went wrong. Try again!']
+
+    const apiKey = 'AIzaSyBHXiy7UjaDLQ0sbwIevNGcu0IO4yyaEcE';
 
     async function handleSearch() {
         setDisplayData(true);
@@ -32,22 +38,24 @@ function App() {
     }
 
     return (
-        <main className="App">
-            <Header/>
-            <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch} setStatusMessage={setStatusMessage}/>
+            <main className="App">
+                <Header/>
+                <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}
+                           setStatusMessage={setStatusMessage}/>
 
-            {displayData && (
-                !!Object.keys(forecastData).length ? (
-                    <>
-                        <Weather currentWeather={{...forecastData.current, ...forecastData.location}}/>
-                        {/*<WeatherForecastChart forecast={forecastData.forecast.forecastday}/>*/}
-                        <GoogleWeatherForecastChart forecast={forecastData.forecast.forecastday}/>
-                    </>
-                ) : (
-                    <h2 className='header'>{statusMessages[statusMessage]}</h2>
-                )
-            )}
-        </main>
+                {displayData && (
+                    !!Object.keys(forecastData).length ? (
+                        <>
+                            <Weather currentWeather={{...forecastData.current, ...forecastData.location}}/>
+                            <WeatherForecastChart forecast={forecastData.forecast.forecastday}/>
+                            {/*<GoogleWeatherForecastChart forecast={forecastData.forecast.forecastday}/>*/}
+                            <GoogleMap/>
+                        </>
+                    ) : (
+                        <h2 className='header'>{statusMessages[statusMessage]}</h2>
+                    )
+                )}
+            </main>
     );
 }
 
