@@ -33,7 +33,9 @@ function Search({searchValue, setSearchValue, handleSearch}) {
             />
 
             <button className="search__btn"
-                    onClick={handleSearch}>
+                    onClick={handleSearch}
+                    disabled={!searchValue.length}
+                    >
                 Search
             </button>
         </div>

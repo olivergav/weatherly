@@ -7,6 +7,7 @@ import WeatherForecastChart from "./components/WeatherForecastChart";
 import {getWeatherFromApi} from "./utils/api";
 
 import "./styles/main.scss";
+import GoogleWeatherForecastChart from "./components/GoogleWeatherForecastChart";
 
 function App() {
     const [searchValue, setSearchValue] = useState('');
@@ -39,7 +40,8 @@ function App() {
                 !!Object.keys(forecastData).length ? (
                     <>
                         <Weather currentWeather={{...forecastData.current, ...forecastData.location}}/>
-                        <WeatherForecastChart forecast={forecastData.forecast.forecastday}/>
+                        {/*<WeatherForecastChart forecast={forecastData.forecast.forecastday}/>*/}
+                        <GoogleWeatherForecastChart forecast={forecastData.forecast.forecastday}/>
                     </>
                 ) : (
                     <h2 className='header'>{statusMessages[statusMessage]}</h2>
