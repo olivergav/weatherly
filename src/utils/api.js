@@ -1,4 +1,4 @@
-const BASE_URL = 'http://api.weatherapi.com/v1/forecast.json';
+const BASE_URL = 'https://api.weatherapi.com/v1/forecast.json';
 
 export async function getWeatherFromApi(apiKey, options, city, days = 10, aqi = 'no', alerts = 'no') {
 
