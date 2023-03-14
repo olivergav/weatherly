@@ -8,10 +8,9 @@ Weather single-page webapp project.
 - eCharts
 - Api Hook, Conext
 
-## Live demo:
+## Live demo
 
-[Click me!](link)
-
+[Click me!](https://weatherly0.web.app/)
 
 ## Installation
 
@@ -40,8 +39,4 @@ npm start
 ```
 
 ## todo
-readme tehcnology used,  jak sie uzywa, link do demo,
-
-api do autocomplete dla miast
-
-api.js zrobic zeby obslugiwal bledy
+* add API to autocomplete city search 
