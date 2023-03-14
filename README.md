@@ -1,4 +1,3 @@
----
 # 🌤️ Weatherly 🌪
 
 Weather single-page webapp project.
@@ -8,6 +7,7 @@ Weather single-page webapp project.
 - eCharts
 - Api Hook, Conext
 - Firebase for deploy
+- [Weather API](https://www.weatherapi.com/)
 
 ## Live demo
 
