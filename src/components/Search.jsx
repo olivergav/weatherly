@@ -18,8 +18,9 @@ function Search({searchValue, setSearchValue, handleSearch}) {
     }
 
     return (
-        <div className="search"
-             ref={searchRef}
+        <form className="search"
+              ref={searchRef}
+              onSubmit={(event) => handleSearch(event)}
         >
             <label htmlFor="search" className="search__lbl">Type City</label>
             <input
@@ -35,10 +36,10 @@ function Search({searchValue, setSearchValue, handleSearch}) {
             <button className="search__btn"
                     onClick={handleSearch}
                     disabled={!searchValue.length}
-                    >
+            >
                 Search
             </button>
-        </div>
+        </form>
     )
 }
 

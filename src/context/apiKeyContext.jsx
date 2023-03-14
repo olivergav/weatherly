@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-const apiKey = 'AIzaSyBHXiy7UjaDLQ0sbwIevNGcu0IO4yyaEcE';
+const apiKey = '35c7e90ce95b41d58a1144548231403';
 
 const ApiKeyContext = createContext(apiKey);
 
