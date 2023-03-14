@@ -7,6 +7,7 @@ Weather single-page webapp project.
 - Sass
 - eCharts
 - Api Hook, Conext
+- Firebase for deploy
 
 ## Live demo
 
