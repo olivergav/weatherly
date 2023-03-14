@@ -3,10 +3,10 @@
 Weather single-page webapp project.
 
 - React
-- Sass
-- eCharts
+- [Sass](https://sass-lang.com/)
+- [ECharts](https://echarts.apache.org/en/index.html)
 - Api Hook, Conext
-- Firebase for deploy
+- [Firebase for deploy](https://firebase.google.com/)
 - [Weather API](https://www.weatherapi.com/)
 
 ## Live demo
